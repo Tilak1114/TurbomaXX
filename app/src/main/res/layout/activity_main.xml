@@ -70,12 +70,77 @@
             android:textSize="14sp" />
     </RelativeLayout>
     <ImageView
+        android:id="@+id/dotsquotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/relativeLayout2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/quotebelow" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/dotsquotes"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp"
+        android:id="@+id/companyId">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/batmforever"
+            android:id="@+id/companytv"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#B2B2B2"
+            android:text="koenigsegg"/>
+        <ImageView
+            android:layout_toRightOf="@id/companytv"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dot"/>
+        <ImageView
+            android:layout_toLeftOf="@id/companytv"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dot"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/companyId">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="80dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/rightArrow"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/rightarrowselector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/leftArrow"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/avatar"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/leftarrowselector"/>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "377879819972",
+    "firebase_url": "https://turbomaxx-e7305.firebaseio.com",
+    "project_id": "turbomaxx-e7305",
+    "storage_bucket": "turbomaxx-e7305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377879819972:android:1cb89695f3ddf8d6",
+        "android_client_info": {
+          "package_name": "com.example.turbomaxx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377879819972-9p5pri971gkt982qnqcb280j49u9aeki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCitpPkkYG0RHcCVKNBPIAX8zLRP5Cnr6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377879819972-9p5pri971gkt982qnqcb280j49u9aeki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

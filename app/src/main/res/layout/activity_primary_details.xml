@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".PrimaryDetails" >
+    <include layout="@layout/videobck" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="20dp"
+        android:elevation="2dp"
+        android:translationZ="4dp"
+        android:layout_height="20dp"
+        android:backgroundTint="@android:color/white"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/soundon"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:id="@+id/sndctrl" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="25dp"
+        android:elevation="2dp"
+        android:translationZ="4dp"
+        android:layout_height="25dp"
+        android:backgroundTint="@android:color/white"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/close"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:id="@+id/close" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="300dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/batmforever"
+            android:text="Lamborghini"
+            android:textSize="20sp"
+            android:id="@+id/carCompanyTitle"
+            android:layout_marginTop="50dp"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="20dp"
+            android:id="@+id/countryLogo"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/france"
+            android:layout_below="@id/carCompanyTitle"
+            android:layout_marginTop="20dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryLogo"
+            android:fontFamily="@font/batmforever"
+            android:text="Closer To Roads"
+            android:textSize="18sp"
+            android:id="@+id/carCompTagline"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:background="@drawable/round_rect_bck"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/batmforever"
+            android:text="View models"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>
