@@ -14,12 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.squareup.picasso.Picasso;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PrimaryDetails extends AppCompatActivity {
     String carCompany, path;
     TextView compName, tagLine;
-    CircleImageView countryLogo;
+    CircleImageView countryLogo, compLogo;
     CircleImageView sndctrl, close;
     boolean muted = false;
     VideoView videoview;
@@ -31,6 +33,7 @@ public class PrimaryDetails extends AppCompatActivity {
         videoview = findViewById(R.id.bckvideo);
         close = findViewById(R.id.close);
         sndctrl = findViewById(R.id.sndctrl);
+        compLogo = findViewById(R.id.carCompLogo);
         compName = findViewById(R.id.carCompanyTitle);
         tagLine = findViewById(R.id.carCompTagline);
         countryLogo = findViewById(R.id.countryLogo);
@@ -46,6 +49,10 @@ public class PrimaryDetails extends AppCompatActivity {
 
         switch (carCompany){
             case "Lamborghini":
+                Picasso.with(getApplicationContext()).load(R.drawable.italy).into(countryLogo);
+                compName.setText("Lamboghini");
+                Picasso.with(getApplicationContext()).load(R.drawable.italy).into(countryLogo);
+                tagLine.setText("Closer To Roads");
                 path = "android.resource://" + getPackageName() + "/" + R.raw.lambovert;
                 videoview.setVideoURI(Uri.parse(path));
                 videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -72,6 +79,9 @@ public class PrimaryDetails extends AppCompatActivity {
                 });
                 break;
             case "Aston Martin":
+                compName.setText("Aston Martin");
+                Picasso.with(getApplicationContext()).load(R.drawable.brit).into(countryLogo);
+                tagLine.setText("Power, beauty and soul");
                 path = "android.resource://" + getPackageName() + "/" + R.raw.astonvert;
                 videoview.setVideoURI(Uri.parse(path));
                 videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -98,6 +108,9 @@ public class PrimaryDetails extends AppCompatActivity {
                 });
                 break;
             case "mcLaren":
+                compName.setText("McLaren");
+                Picasso.with(getApplicationContext()).load(R.drawable.brit).into(countryLogo);
+                tagLine.setText("There is no finish line");
                 path = "android.resource://" + getPackageName() + "/" + R.raw.mclarenvert;
                 videoview.setVideoURI(Uri.parse(path));
                 videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

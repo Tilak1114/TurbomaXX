@@ -33,21 +33,27 @@
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
         android:layout_height="300dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:id="@+id/carCompLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_height="40dp"/>
         <TextView
+            android:layout_below="@id/carCompLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/batmforever"
             android:text="Lamborghini"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:id="@+id/carCompanyTitle"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"/>
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="20dp"
             android:id="@+id/countryLogo"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/france"
             android:layout_below="@id/carCompanyTitle"
             android:layout_marginTop="20dp"
             android:layout_height="20dp"/>
