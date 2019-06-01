@@ -31,16 +31,15 @@
         android:id="@+id/close" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_height="300dp">
+        android:layout_height="280dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
-            android:id="@+id/carCompLogo"
+            android:id="@+id/countryLogo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_height="40dp"/>
         <TextView
-            android:layout_below="@id/carCompLogo"
+            android:layout_below="@id/countryLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/batmforever"
@@ -50,29 +49,25 @@
             android:layout_marginTop="20dp"
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"/>
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="20dp"
-            android:id="@+id/countryLogo"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/carCompanyTitle"
-            android:layout_marginTop="20dp"
-            android:layout_height="20dp"/>
         <TextView
             android:layout_width="150dp"
             android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_below="@id/countryLogo"
+            android:layout_below="@id/carCompanyTitle"
             android:fontFamily="@font/batmforever"
             android:text="Closer To Roads"
             android:textSize="18sp"
             android:id="@+id/carCompTagline"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/darker_gray"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="160dp"
-        android:background="@drawable/round_rect_bck"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/viewModelsLay"
+        android:background="@drawable/btn_sel"
         android:layout_height="50dp"
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
