@@ -14,7 +14,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +42,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*
+        DocumentReference dr = FirebaseFirestore.getInstance().document("Cars/McLaren/Models/gt");
+        Map<String, Object> details = new HashMap<>();
+        details.put("bodyType", "");
+        details.put("driveType", "");
+        details.put("engine", "");
+        details.put("gearbox", "");
+        details.put("modelname", "");
+        details.put("powerSpec2", "");
+        details.put("powerSpec1", "");
+        details.put("topSpeed", "");
+        details.put("torque", "");
+        details.put("zerotohund", "");
+
+        dr.set(details);*/
 
         handler =new Handler();
 
