@@ -2,6 +2,7 @@ package com.example.turbomaxx;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +17,7 @@ import com.google.firebase.firestore.Query;
 
 public class ModelActivity extends AppCompatActivity {
     TextView title;
-    RelativeLayout wall, parentLay;
+    RelativeLayout wall, parentLay, rvParent;
     RecyclerView recyclerView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CarModelAdapter adapter;
@@ -36,6 +37,7 @@ public class ModelActivity extends AppCompatActivity {
         wall = findViewById(R.id.wall);
         parentLay = findViewById(R.id.parentlayList);
         recyclerView = findViewById(R.id.recycler_view);
+        rvParent = findViewById(R.id.parent_lay_model);
         title.setText(titlestr);
         wall.setBackgroundResource(wallId);
         parentLay.setBackgroundColor(Color.parseColor(BckColor));

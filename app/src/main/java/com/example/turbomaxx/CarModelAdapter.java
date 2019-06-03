@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -38,11 +39,13 @@ public class CarModelAdapter extends FirestoreRecyclerAdapter<CarModel, CarModel
 
     class CarModelHolder extends RecyclerView.ViewHolder{
         TextView carModelTv, bodyTypeTv, fuelTypeTv;
+        RelativeLayout parentLay;
         CircleImageView avatar;
         public CarModelHolder(@NonNull View itemView) {
             super(itemView);
             carModelTv = (TextView) itemView.findViewById(R.id.ModelName);
             bodyTypeTv = itemView.findViewById(R.id.ModelType);
+            parentLay = itemView.findViewById(R.id.parent_lay_model);
             fuelTypeTv = itemView.findViewById(R.id.fuelType);
             avatar = itemView.findViewById(R.id.modelPic);
         }
