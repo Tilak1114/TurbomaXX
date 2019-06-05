@@ -17,17 +17,33 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CarModelAdapter extends FirestoreRecyclerAdapter<CarModel, CarModelAdapter.CarModelHolder> {
     Context context;
-    public CarModelAdapter(@NonNull FirestoreRecyclerOptions<CarModel> options, Context context) {
+    ItemClickInterface itemClickInterface;
+    public CarModelAdapter(@NonNull FirestoreRecyclerOptions<CarModel> options, Context context,
+                           ItemClickInterface itemClickInterface) {
         super(options);
         this.context = context;
+        this.itemClickInterface = itemClickInterface;
     }
 
+    public interface ItemClickInterface{
+        void onItemClick(String modelName, String avatarUrl, String engine, String power1,
+                         String power2, String torque, String fuel, String topSpeed, String acc,
+                         String drive, String gearbox);
+    }
     @Override
-    protected void onBindViewHolder(@NonNull CarModelHolder holder, int position, @NonNull CarModel model) {
+    protected void onBindViewHolder(@NonNull CarModelHolder holder, int position, @NonNull final CarModel model) {
         holder.carModelTv.setText(model.getModelname());
         holder.bodyTypeTv.setText(model.getBodyType());
         holder.fuelTypeTv.setText(model.getFuel());
         Picasso.with(context).load(model.getCarAvatar()).into(holder.avatar);
+        holder.parentLay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickInterface.onItemClick(model.getModelname(), model.getCarAvatar(), model.getEngine(),
+                        model.getPowerSpec1(), model.getPowerSpec2(), model.getTorque(), model.getFuel(),
+                        model.getTopSpeed(), model.getZerotohund(), model.getDriveType(), model.getGearbox());
+            }
+        });
     }
 
     @NonNull

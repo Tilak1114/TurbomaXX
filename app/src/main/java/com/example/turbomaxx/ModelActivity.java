@@ -15,7 +15,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class ModelActivity extends AppCompatActivity {
+public class ModelActivity extends AppCompatActivity implements CarModelAdapter.ItemClickInterface{
     TextView title;
     RelativeLayout wall, parentLay, rvParent;
     RecyclerView recyclerView;
@@ -49,7 +49,7 @@ public class ModelActivity extends AppCompatActivity {
         Query query = carModelRef.orderBy("modelname");
         FirestoreRecyclerOptions<CarModel> options = new FirestoreRecyclerOptions.Builder<CarModel>()
                 .setQuery(query, CarModel.class).build();
-        adapter = new CarModelAdapter(options, getApplicationContext());
+        adapter = new CarModelAdapter(options, getApplicationContext(), this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
@@ -71,5 +71,22 @@ public class ModelActivity extends AppCompatActivity {
     public void onBackPressed() {
         setResult(1);
         finish();
+    }
+
+    @Override
+    public void onItemClick(String modelName, String avatarUrl, String engine, String power1, String power2, String torque, String fuel, String topSpeed, String acc, String drive, String gearbox) {
+        Intent intent = new Intent(getApplicationContext(), FullDetailActivity.class);
+        intent.putExtra("ModelNameDet", modelName);
+        intent.putExtra("accdet", acc);
+        intent.putExtra("gbdet", gearbox);
+        intent.putExtra("drivedet", drive);
+        intent.putExtra("torquedet", torque);
+        intent.putExtra("fueldet", fuel);
+        intent.putExtra("enginedet", engine);
+        intent.putExtra("power2det", power2);
+        intent.putExtra("power1det", power1);
+        intent.putExtra("caravadet", avatarUrl);
+        intent.putExtra("topspeeddet", topSpeed);
+        startActivity(intent);
     }
 }
