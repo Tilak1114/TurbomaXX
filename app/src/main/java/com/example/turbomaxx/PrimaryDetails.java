@@ -173,6 +173,86 @@ public class PrimaryDetails extends AppCompatActivity {
                     }
                 });
                 break;
+            case "Ferrari":
+                //Picasso.with(getApplicationContext()).load(R.drawable.mclaren).into(compLogo);
+                compName.setText("Ferrari");
+                Picasso.with(getApplicationContext()).load(R.drawable.brit).into(countryLogo);
+                tagLine.setText("We are the competition");
+                path = "android.resource://" + getPackageName() + "/" + R.raw.ferrvert;
+                videoview.setVideoURI(Uri.parse(path));
+                videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(final MediaPlayer mp) {
+                        mp.setVolume(100, 100);
+                        sndctrl.setOnClickListener(new View.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                            @Override
+                            public void onClick(View v) {
+                                mp.setVolume(0, 0);
+                                sndctrl.setImageResource(R.drawable.muteicon);
+                            }
+                        });
+                        mp.setLooping(true);
+                    }
+                });
+                videoview.start();
+                videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        videoview.start();
+                    }
+                });
+                modelsBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent modelIntent = new Intent(getApplicationContext(), ModelActivity.class);
+                        modelIntent.putExtra("CompanyTitle", "Ferrari");
+                        modelIntent.putExtra("WallId", String.valueOf(R.drawable.ferrariwall));
+                        modelIntent.putExtra("BckColor", "#000000");
+                        startActivityForResult(modelIntent, 123);
+                    }
+                });
+                break;
+            case "Rolls Royce":
+                //Picasso.with(getApplicationContext()).load(R.drawable.mclaren).into(compLogo);
+                compName.setText("Rolls Royce");
+                Picasso.with(getApplicationContext()).load(R.drawable.brit).into(countryLogo);
+                tagLine.setText("Trusted to Deliver Excellence");
+                path = "android.resource://" + getPackageName() + "/" + R.raw.rollsroycevert;
+                videoview.setVideoURI(Uri.parse(path));
+                videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(final MediaPlayer mp) {
+                        mp.setVolume(100, 100);
+                        sndctrl.setOnClickListener(new View.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                            @Override
+                            public void onClick(View v) {
+                                mp.setVolume(0, 0);
+                                sndctrl.setImageResource(R.drawable.muteicon);
+                            }
+                        });
+                        mp.setLooping(true);
+                    }
+                });
+                videoview.start();
+                videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        videoview.start();
+                    }
+                });
+                modelsBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent modelIntent = new Intent(getApplicationContext(), ModelActivity.class);
+                        modelIntent.putExtra("CompanyTitle", "Rolls Royce");
+                        modelIntent.putExtra("WallId", String.valueOf(R.drawable.rollsroycewall));
+                        modelIntent.putExtra("BckColor", "#000000");
+                        startActivityForResult(modelIntent, 123);
+                    }
+                });
+                break;
         }
     }
 
