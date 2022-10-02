@@ -53,7 +53,7 @@ public class CarModelAdapter extends FirestoreRecyclerAdapter<CarModel, CarModel
         return new CarModelHolder(v);
     }
 
-    class CarModelHolder extends RecyclerView.ViewHolder{
+    static class CarModelHolder extends RecyclerView.ViewHolder{
         TextView carModelTv, bodyTypeTv, fuelTypeTv;
         RelativeLayout parentLay;
         CircleImageView avatar;

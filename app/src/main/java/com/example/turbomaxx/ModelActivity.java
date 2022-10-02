@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -15,7 +18,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class ModelActivity extends AppCompatActivity implements CarModelAdapter.ItemClickInterface{
+public class ModelActivity extends AppCompatActivity implements CarModelAdapter.ItemClickInterface {
     TextView title;
     RelativeLayout wall, parentLay, rvParent;
     RecyclerView recyclerView;
@@ -31,8 +34,8 @@ public class ModelActivity extends AppCompatActivity implements CarModelAdapter.
         String titlestr = intent.getStringExtra("CompanyTitle");
         String wallIdStr = intent.getStringExtra("WallId");
         String BckColor = intent.getStringExtra("BckColor");
-        Integer wallId = Integer.parseInt(wallIdStr);
-        carModelRef = db.collection("Cars/"+titlestr+"/Models");
+        int wallId = Integer.parseInt(wallIdStr);
+        carModelRef = db.collection("Cars/" + titlestr + "/Models");
         title = findViewById(R.id.compNameInList);
         wall = findViewById(R.id.wall);
         parentLay = findViewById(R.id.parentlayList);
@@ -51,7 +54,9 @@ public class ModelActivity extends AppCompatActivity implements CarModelAdapter.
                 .setQuery(query, CarModel.class).build();
         adapter = new CarModelAdapter(options, getApplicationContext(), this);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new WrapContentLinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.VERTICAL, false));
+
         recyclerView.setAdapter(adapter);
     }
 
